@@ -52,6 +52,9 @@ export default function Gym() {
   const Showadd = () => {
     document.getElementById("show").style.display = "block"
   }
+   const showset = () => {
+    document.getElementById("shoset").style.display = "block"
+  }
   const confirm = () => {
     alert("successfully Book")
 
@@ -74,6 +77,8 @@ export default function Gym() {
           <Row>
             <Col className="col-md-4 mt-md-0 mt-3">
               <lable> <b> Location </b> </lable>
+              <form>
+              <button className="button" id="shoset" style={{ display: "none" , marginLeft:"200px" }} ><b>Reset</b></button></form>
               <br />
               <input type="search" style={{ width: "195px" }} placeholder="Location" onChange={(ele) => {     Showadd(),
       setLocation(ele.target.value); }} />
@@ -90,7 +95,7 @@ export default function Gym() {
               <br/>
               <div>
               </div>
-              <select style={{ width: "195px" }} onChange={(ele) => {     Showadd(),
+              <select style={{ width: "195px" }} onChange={(ele) => {     Showadd(), showset() ,
       setLocat(ele.target.value); }} type="search">
                 <option style={{ backgroundColor: "rgba(255,255,255,0.4)" }} disabled selected >Select Cities</option>
                 <option value="Ghaziabad">Ghaziabad</option>
